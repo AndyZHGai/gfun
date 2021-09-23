@@ -7,8 +7,8 @@
 #'
 #' @author Zhonghui Gai
 #' @examples
-#' gfun::install_github(:ggroup)
-install_github <- function(pkg = "ggroup"){
+#' gfun::install_github("ggroup")
+install_github <- function(pkg = "ggroup", ...){
   pkg <- paste0("ZhonghuiGai/", pkg)
   devtools::install_github(pkg)
 }
