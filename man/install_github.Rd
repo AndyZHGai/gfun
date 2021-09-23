@@ -4,7 +4,7 @@
 \alias{install_github}
 \title{Install packages form github}
 \usage{
-install_github(pkg = "ggroup")
+install_github(pkg = "ggroup", ...)
 }
 \arguments{
 \item{pkg}{the package name}
@@ -16,7 +16,7 @@ install_github(pkg = "ggroup")
 Install packages form github
 }
 \examples{
-gfun::install_github(:ggroup)
+gfun::install_github("ggroup")
 }
 \author{
 Zhonghui Gai
