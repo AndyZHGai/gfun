@@ -3,6 +3,7 @@
 export(colorplot)
 export(data.in)
 export(data.out)
+export(env.rm)
 export(gfunlist)
 export(init)
 export(install_github)
