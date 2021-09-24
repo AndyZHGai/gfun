@@ -9,9 +9,9 @@ slice(select = c("setosa$", "^virginica"), group = iris$Species, data = NULL)
 \arguments{
 \item{select}{a vector to be used for slice, character string containing a regular expression (or character string for fixed = TRUE) to be matched in the given character vector.}
 
-\item{data}{a data frame or NULL}
+\item{group}{the group variable, the column containing the grouping information}
 
-\item{vector}{the group variable, the column containing the grouping information}
+\item{data}{a data frame or NULL}
 }
 \value{
 a vector or data frame
@@ -26,6 +26,9 @@ data <- iris
 colnames(data)[5] <- "group"
 iris.ind2 <- slice(select = c("setosa$", "^virginica"), data = iris)
 identical(iris.ind, iris.ind2)
+subset(iris, Species == "setosa" | Species == "virginca")
+slice(select = c(4,1), group = mtcars$carb, mtcars)
+slice(select = c(21, 15), group = mtcars$mpg, mtcars)
 }
 \author{
 Zhonghui Gai

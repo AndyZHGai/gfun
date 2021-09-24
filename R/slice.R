@@ -1,8 +1,8 @@
 #' slice lets you index rows by a grouping variable, it's a wrapper function of grepl
 #'
 #' @param select a vector to be used for slice, character string containing a regular expression (or character string for fixed = TRUE) to be matched in the given character vector.
-#' @param vector the group variable, the column containing the grouping information
 #' @param data a data frame or NULL
+#' @param group the group variable, the column containing the grouping information
 #'
 #' @return a vector or data frame
 #' @export
@@ -15,6 +15,9 @@
 #' colnames(data)[5] <- "group"
 #' iris.ind2 <- slice(select = c("setosa$", "^virginica"), data = iris)
 #' identical(iris.ind, iris.ind2)
+#' subset(iris, Species == "setosa" | Species == "virginca")
+#' slice(select = c(4,1), group = mtcars$carb, mtcars)
+#' slice(select = c(21, 15), group = mtcars$mpg, mtcars)
 slice <- function (select = c("setosa$", "^virginica"), group = iris$Species,
           data = NULL) {
   # step 1 check the input
