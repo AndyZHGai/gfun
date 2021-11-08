@@ -25,6 +25,13 @@ data.in <- function(file.path = "./data.txt",
       file <- read.delim(file = file.path, sep = "\t")
     }
   }
+  if (type == "csv") {
+    if (rowname) {
+      file <- read.csv(file = file.path, row.names = 1, sep = ",")
+    } else {
+      file <- read.csv(file = file.path, sep = ",")
+    }
+  }
   if (type == "xlsx") {
     file <- openxlsx::read.xlsx(xlsxFile = file.path, sheet = sheet,
                                 colNames = colname, rowNames = rowname)
